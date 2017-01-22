@@ -7,9 +7,9 @@ import goodAction from '../actions/goods'
 
 
 class GoodContent extends Component{
-    constructor(){
+   /* constructor(){
         super();
-    }
+    }*/
     componentWillMount(){
         const {queryList} = this.props
         queryList('all')

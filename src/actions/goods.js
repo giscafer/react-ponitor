@@ -19,7 +19,7 @@ const filterGood = (goods, type = 'all') => {
 }
 const fetchGood = (type, dispatch) => {
     goodService.query(type, (goods) => {
-        sessionStorage.goods = goods;
+        sessionStorage.goods = JSON.stringify(goods);
         dispatch({
             type: FETCH_GOOD,
             payload: filterGood(goods, type)
@@ -31,7 +31,7 @@ const queryList = type => dispatch => {
     if (type === 'all') {
         fetchGood(type, dispatch)
     } else {
-        let goods=sessionStorage.goods;
+        let goods=sessionStorage.goods && JSON.parse(sessionStorage.goods);
         if (goods && goods.length) {
             dispatch({
                 type: FETCH_GOOD,
