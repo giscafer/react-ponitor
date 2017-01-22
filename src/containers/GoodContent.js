@@ -9,18 +9,17 @@ import goodAction from '../actions/goods'
 class GoodContent extends Component{
     constructor(){
         super();
-
     }
     componentWillMount(){
-        const {fetchGood} = this.props
-        fetchGood('all')
+        const {queryList} = this.props
+        queryList('all')
     }
 
     render(){
-        let {goods }=this.props;
+        let {goods,queryList}=this.props;
        return (
             <div>
-                <CategoryFilter/>
+                <CategoryFilter onFilterClick={queryList}/>
                 <GoodList goods={goods}/>
             </div>
        )

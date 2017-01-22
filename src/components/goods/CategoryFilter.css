@@ -8,6 +8,14 @@
     display: -moz-inline-flex;; /* Firefox */
     justify-content:center;
 }
-.cate nav>a{
+.cate nav > span{
+    cursor: pointer;
+    border-radius: 13px;
     margin: 0 1em 0 1em ;
+    padding: 5px 10px
+}
+.cate nav > span:hover{
+    background-color: #ccc;
+    margin: 0 1em 0 1em;
+    color:#1192b9
 }

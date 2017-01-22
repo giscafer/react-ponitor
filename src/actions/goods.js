@@ -7,17 +7,41 @@ const ADD_GOOD = 'ADD_GOOD'
 const DEL_GOOD = 'DEL_GOOD'
 
 // Action Creator
-const fetchGood = type => dispatch => {
+
+//父类过滤
+const filterGood = (goods, type = 'all') => {
+    if (type !== 'all') {
+        return goods.filter(good => {
+            return good.type === type
+        })
+    }
+    return goods;
+}
+const fetchGood = (type, dispatch) => {
     goodService.query(type, (goods) => {
+        sessionStorage.goods = goods;
         dispatch({
-            type:FETCH_GOOD,
-            payload:goods
+            type: FETCH_GOOD,
+            payload: filterGood(goods, type)
         })
     })
 }
-
+// 设计一次查询所有商品时，前端sessionStorage保存，查询其他类别不走请求
+const queryList = type => dispatch => {
+    if (type === 'all') {
+        fetchGood(type, dispatch)
+    } else {
+        let goods=sessionStorage.goods;
+        if (goods && goods.length) {
+            dispatch({
+                type: FETCH_GOOD,
+                payload: filterGood(goods, type)
+            })
+        }
+    }
+}
 export default {
-    fetchGood
+    queryList
 }
 
 // 参考网友的写法
@@ -28,6 +52,6 @@ export default {
 // 且在 Reducer 中写 switch-case 实在太不优雅
 // 故在此直接给出处理逻辑
 // ================================
-export const ACTION_HANDLERS={
-    [FETCH_GOOD]:(goods,{payload})=>payload
+export const ACTION_HANDLERS = {
+    [FETCH_GOOD]: (goods, {payload}) => payload
 }

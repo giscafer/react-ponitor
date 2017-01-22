@@ -4,15 +4,15 @@
 import React from 'react'
 import './CategoryFilter.css'
 
-export default () => {
+export default ({onFilterClick}) => {
 
     return (
         <div className="cate">
             <nav>
-                <a href="#!/?type=all">所有</a> 
-                <a href="#!/jd?type=jd" className="link-active">京东</a>
-                <a href="#!/alibaba?type=alibaba">天猫|淘宝</a>
-                <a href="#!/apps?type=apple">Apple App</a>
+                <span onClick={()=>onFilterClick('all')}>所有</span>
+                <span onClick={()=>onFilterClick('jd')} className="link-active">京东</span>
+                <span onClick={()=>onFilterClick('alibaba')}>天猫|淘宝</span>
+                <span onClick={()=>onFilterClick('apple')}>Apple App</span>
             </nav>
         </div>
     )
