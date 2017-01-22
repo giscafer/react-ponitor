@@ -1,0 +1,13 @@
+.cate{
+    display: block;
+    margin-top:10px
+}
+.cate nav{
+    display: inline-flex;;
+    display: -webkit-inline-flex;; /* Safari Chrome*/
+    display: -moz-inline-flex;; /* Firefox */
+    justify-content:center;
+}
+.cate nav>a{
+    margin: 0 1em 0 1em ;
+}
