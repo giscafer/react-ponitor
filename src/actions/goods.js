@@ -4,7 +4,7 @@ import goodService from '../service/goodService'
 // Action Type
 const FETCH_GOOD = 'FETCH_GOOD'
 const ADD_GOOD = 'ADD_GOOD'
-const DEL_GOOD = 'DEL_GOOD'
+// const DEL_GOOD = 'DEL_GOOD'//
 
 // Action Creator
 
