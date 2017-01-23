@@ -9,6 +9,9 @@
 [Ponitor](https://github.com/giscafer/Ponitor/)是早期vue.js 1.x开发，**react-ponitor** 是使用 react + react-redux 改写其前端部分
 
 
+## Sreenshot
+
+![截图](https://raw.githubusercontent.com/giscafer/react-ponitor/master/public/screenshot.png)
 
 ## Usage
 
