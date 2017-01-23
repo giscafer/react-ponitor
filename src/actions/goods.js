@@ -11,11 +11,11 @@ const DEL_GOOD = 'DEL_GOOD'
 //父类过滤
 const filterGood = (goods, type = 'all') => {
     if (type !== 'all') {
-        return goods.filter(good => {
+        goods = goods.filter(good => {
             return good.type === type
-        })
+        });
     }
-    return goods;
+    return { goods, goodType: type };
 }
 const fetchGood = (type, dispatch) => {
     goodService.query(type, (goods) => {
@@ -31,7 +31,7 @@ const queryList = type => dispatch => {
     if (type === 'all') {
         fetchGood(type, dispatch)
     } else {
-        let goods=sessionStorage.goods && JSON.parse(sessionStorage.goods);
+        let goods = sessionStorage.goods && JSON.parse(sessionStorage.goods);
         if (goods && goods.length) {
             dispatch({
                 type: FETCH_GOOD,
@@ -40,8 +40,19 @@ const queryList = type => dispatch => {
         }
     }
 }
+
+const addGood = url => dispatch => {
+    goodService.add(url, good => {
+        dispatch({
+            type: ADD_GOOD,
+            payload: good
+        })
+    });
+}
+
+
 export default {
-    queryList
+    queryList, addGood
 }
 
 // 参考网友的写法
@@ -53,5 +64,11 @@ export default {
 // 故在此直接给出处理逻辑
 // ================================
 export const ACTION_HANDLERS = {
-    [FETCH_GOOD]: (goods, {payload}) => payload
+    [FETCH_GOOD]: (good, {payload}) => payload,
+    [ADD_GOOD]: (state, {payload}) => {
+        let goods = sessionStorage.goods && JSON.parse(sessionStorage.goods);
+        console.log(state)
+        let temp = [...goods, payload];
+        return filterGood(temp,payload.type);
+    }
 }

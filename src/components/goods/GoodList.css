@@ -18,8 +18,16 @@
     width: 9em;
     padding: 2em 1.5em;
 }
+
 .good-column .good:hover{
     background-color: #eee
+}
+
+.good-column .good .good-price{
+    margin:4px;
+    background-color:#eee;
+    color:red;
+    border-radius: 8px
 }
 .good-column .good .good-name a.detail{
    background-color:#eee;

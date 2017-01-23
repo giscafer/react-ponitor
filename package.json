@@ -3,7 +3,11 @@
   "version": "0.1.0",
   "private": false,
   "description": "商品价格监测应用",
-   "keywords": ["react","ponitor","react-redux"],
+  "keywords": [
+    "react",
+    "ponitor",
+    "react-redux"
+  ],
   "author": "Nickbing Lao <giscafer@outlook.com>",
   "devDependencies": {
     "autoprefixer": "^6.6.1",
@@ -15,13 +19,13 @@
   },
   "dependencies": {
     "es6-promise": "^4.0.5",
-    "isomorphic-fetch": "^2.2.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
     "redux-logger": "^2.7.4",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "superagent": "^3.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
