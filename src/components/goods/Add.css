@@ -21,11 +21,11 @@
 }
 #add-good input{
     width: 45em;
-    height: 1.9em;
+    height: 2em;
     border: 1px solid #d5d5d5;
     border-right: none;
     border-radius: 2em 0 0 2em;
-    padding: .2em 1em .3em;
+    padding: .2em 1em .2em;
     outline: none
 }
 
@@ -48,7 +48,7 @@
         border: 1px solid #d5d5d5;
         border-right: none;
         border-radius: 1em 0 0 1em;
-        padding: .2em 2em .3em;
+        padding: .2em 2em .2em;
         margin-left:1em;
         outline: none
     }

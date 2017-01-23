@@ -22,6 +22,9 @@ class GoodService {
     }
 
     add(url = null, cb) {
+        if(!url){
+            
+        }
         if (!cb) throw new Error("Bad response from server");
 
         let bodyParams = {
@@ -35,7 +38,7 @@ class GoodService {
                 if (err) {
                     return alert(err)
                 }
-                if (res.body.result_code === -1) {
+                if (res.body.result_code === -1 || res.body.error) {
                     return alert(res.body.error);
                 }else if(res.body.errors){
                     return alert(res.body.message || res.body.errors);
