@@ -1,0 +1,37 @@
+
+.good-column{
+    display: -webkit-flex; /* Safari */
+    display: -moz-flex;
+    display: flex;
+    -webkit-justify-content:flex-start;
+    -moz-justify-content:flex-start;
+    justify-content:flex-start;
+/*    flex-direction:column;
+    -webkit-flex-direction:column;
+    -moz-flex-direction:column;*/
+    margin:2em 6em 6em 6em;
+    flex-wrap:wrap;
+    -webkit-flex-wrap:wrap;
+    -moz-flex-wrap:wrap;
+}
+.good-column .good{
+    width: 9em;
+    padding: 2em 1.5em;
+}
+.good-column .good:hover{
+    background-color: #eee
+}
+.good-column .good .good-name a.detail{
+   background-color:#eee;
+   padding: 3px 8px;
+   border-radius: 3px;
+}
+.good-column .good .good-name a.detail:hover{
+   background-color:green;
+   color: #fff
+}
+.good-column .good .icon img{
+    width: 9em;
+    height:9em;
+    border-radius: 2em;
+}

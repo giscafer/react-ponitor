@@ -1,15 +1,15 @@
 /* eslint-disable */
 import React from 'react'
 
-export default ({good={}}) => {
+export default ({goodInfo = {}}) => {
     return (
         <div className='good'>
             <div className='icon'>
-                <img src={good.src} alt={good.name} className='good-img' />
-                <div className='good-name' title={good.name}>
-                    {good.name}<br />
-                    <a href={good.url} target='_blank'>详情</a>
-                    <a style={{cursor:'pointer'}} href='javascript:void(0)'>趋势</a>
+                <img src={goodInfo.image} alt={goodInfo.name} className='good-img' />
+                <div className='good-name' title={goodInfo.name}>
+                    {goodInfo.name}<br />
+                    <a className='detail' href={goodInfo.url} target='_blank'>详情</a>
+                    { /*<a style={{cursor:'pointer'}} href='javascript:void(0)'>趋势</a>*/}
                 </div>
             </div>
         </div>
