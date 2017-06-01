@@ -8,7 +8,7 @@
 
 [Ponitor](https://github.com/giscafer/Ponitor/) 是早期vue.js 1.x开发，**react-ponitor** 是使用 react + react-redux 改写其前端部分
 
-本demo演示地址：http://giscafer.com/react-ponitor/
+本demo演示地址：https://giscafer.github.io/react-ponitor/
 
 
 
